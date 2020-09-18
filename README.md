@@ -1,2 +1,2 @@
 # INSIGHT_DAPSE
-Data Analytics Platform with Schema Evolution
+Data Analytics Platform with Schema Evolution (DAPSE)
