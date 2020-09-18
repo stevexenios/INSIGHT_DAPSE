@@ -1,5 +1,5 @@
 # INSIGHT_DAPSE
-Data Analytics Platform with Schema Evolution (DAPSE)
+Data Analytics Platform with Schema Evolution ([DAPSE](https://github.com/users/stevexenios/projects/6))
 
 ## Table of Contents
 1. [Data and other data sources](README.md#data)
