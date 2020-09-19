@@ -26,6 +26,21 @@ The `low-carbon-london-data-168-files` is about 10.7 GB (11,585,294,336 bytes) o
 
 
 
+### 2. Indoor Air Quality Data
+This dataset I obtained from [Kaggle](https://www.kaggle.com/mvolkerts/home-office-airpi). The data was obtained using an **AirPi** ([Link](http://airpi.es/)) which was placed in a home office.
+
+* Initial size = 1.67 MB (1,752,128 bytes)
+
+After deleting columns associated with light, volume and extra temperature reading, I was left with:
+
+* Final size = 1.21 MB (1,273,856 bytes)
+
+For how the data looks and units used, see image below.
+
+![Airpi](./IMAGES/airpi.png)
+
+
+### 3. Other Possible Sources of Data
 1. https://data.open-power-system-data.org/household_data/
 2. https://data.austintexas.gov/resource/d9pb-3vh7.csv
 3. https://www.kaggle.com/epa/carbon-monoxide
