@@ -12,11 +12,15 @@ Readings were taken every 0.5 hour, and energy consumption is in kWh/half-hour. 
 * High   = 67.20p/kWh
 * Low    =  3.99p/kWh
 * Normal = 11.76p/kWh
+
 ![Tariff rate](./IMAGES/tou.png)
+
 
 The remaining customers (~4500) were on a:
 * Flat rate tariff of = 14.228 pence/kWh
+
 ![Standard rate](./IMAGES/std.png)
+
 
 The `low-carbon-london-data-168-files` is about 10.7 GB (11,585,294,336 bytes) once unzipped. 168 seprate `.csv` files, each containing 1 million rows, and about ~67MB in size.
 
