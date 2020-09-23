@@ -48,6 +48,7 @@ After using real data and simulating more (based on the real energy and airquali
 ![Data unwrangling](./IMAGES/unwrangling.png)
 
 Directories `IMAGES/SCHEMA/AQ` and `IMAGES/SCHEMA/ENERGY` each contain 3600 `.csv` files. Total size is **8.90 GB (9,565,413,376 bytes)**
+
 For AQ, the file looks like:
 
 ![AQ](./IMAGES/aq.png)
