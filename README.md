@@ -45,7 +45,7 @@ This data set I obtained from [Seattle GeoData](https://data-seattlecitygis.open
 
 After using real data and simulating more (based on the real energy and airquality datasets), I was able to create a Schema based dataset. The process is detailed in the image below.
 
-![Data unwrangling](./IMAGES/unwragnled.png)
+![Data unwrangling](./IMAGES/unwrangled.png)
 
 Directories `IMAGES/SCHEMA/AQ` and `IMAGES/SCHEMA/ENERGY` each contain 3600 `.csv` files. Total size is **8.90 GB (9,565,413,376 bytes)**
 For AQ, the file looks like:
