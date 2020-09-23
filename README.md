@@ -55,7 +55,7 @@ For ENERGY, the file looks like:
 ![ENERGY](./IMAGES/energy.png)
 
 
-### 3. Other Possible Sources of Data
+### 4. Other Possible Sources of Data
 1. https://data.open-power-system-data.org/household_data/
 2. https://data.austintexas.gov/resource/d9pb-3vh7.csv
 3. https://www.kaggle.com/epa/carbon-monoxide
