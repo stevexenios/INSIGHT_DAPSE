@@ -3,7 +3,8 @@ Data Analytics Platform with Schema Evolution ([DAPSE](https://github.com/users/
 
 ## Table of Contents
 1. [Data](README.md#data)
-1. [Ingestion](README.md#ingestion)
+1. [Pipeline](README.md#pipeline)
+1. [Managers](README.md#managers)
 
 ## Data
 ### 1. Utility Data
