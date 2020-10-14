@@ -5,6 +5,7 @@ Data Analytics Platform with Schema Evolution ([DAPSE](https://github.com/users/
 1. [Data](README.md#data)
 1. [Pipeline](README.md#pipeline)
 1. [Managers](README.md#managers)
+1. [Python](README.md#python)
 
 ## Data
 ### 1. Utility Data
@@ -69,3 +70,7 @@ For ENERGY, the file looks like:
 ## Pipeline
 
 ## Managers
+
+
+## Python
+In the `./python_gh/` directory, are some of the python files I used. Streamer is the culprit behind the hail mary streaming; none_z_less, streamed the data into a postgreSQL+Timescale DB table.
