@@ -76,3 +76,8 @@ For ENERGY, the file looks like:
 In the `./python_gh/` directory, are some of the python files I used. Streamer is the culprit behind the hail mary streaming; none_z_less, streamed the data into a postgreSQL+Timescale DB table.
 
 ## Database
+Essentially, PostgreSQL since I used Timescale DB.
+![DB](./IMAGES/tsdb.png)
+
+### Database schema used:
+![DB](./schema.avsc)
