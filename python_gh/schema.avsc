@@ -1,0 +1,92 @@
+{
+   "type": "record",
+   "namespace": "both.avro",
+   "name": "both",
+   "doc": "Both air q and e",
+   "fields": [
+      {
+         "name": "X",
+         "type": ["null", "string", "double"],
+         "default": null
+      },
+      {
+         "name": "Y",
+         "type": ["null", "string", "double"],
+         "default": null
+      },
+      {
+         "name": "ADDRESS",
+         "type": ["null", "string"],
+         "default": null
+      },
+      {
+         "name": "CITY",
+         "type": ["null", "string"],
+         "default": null
+      },
+      {
+         "name": "STATE",
+         "type": ["null", "string"],
+         "default": null
+      },
+      {
+         "name": "ZIP",
+         "type": ["null", "string", "int"],
+         "default": null
+      },
+      {
+         "name": "PM_2_5",
+         "doc": "Units are in micrograms per cubic meter (ug/m3)",
+         "type": ["null", "string", "int", "double"],
+         "default": null
+      },
+      {
+         "name": "O3",
+         "doc": "Units are in parts per billion (ppb)",
+         "type": ["null", "string", "int", "double"],
+         "default": null
+      },
+      {
+         "name": "NO2",
+         "doc": "Units are in parts per billion (ppb)",
+         "type": ["null", "string", "int", "double"],
+         "default": null
+      },
+      {
+         "name": "SO2",
+         "doc": "Units are in parts per billion (ppb)",
+         "type": ["null", "string", "int", "double"],
+         "default": null
+      },
+      {
+         "name": "CO",
+         "doc": "Units are in parts per million (ppm)",
+         "type": ["null", "string", "int", "double"],
+         "default": null
+      },
+      {
+         "name": "TEMP",
+         "doc": "Units are in degrees Farenheit (F)",
+         "type": ["null", "string", "int", "double"],
+         "default": null
+      },
+      {
+         "name": "HUMIDITY",
+         "doc": "Measured as a percentage (%)",
+         "type": ["null", "string", "int", "double"],
+         "default": null
+      },
+      {
+         "name": "ENERGY_CONSUMED",
+         "doc": "Values are in Kilowatts consumed per hour(kWh/h)",
+         "type": ["null", "string", "int", "double"],
+         "default": null
+      },
+      {
+         "name": "TARRIFF",
+         "doc": "Units are in degrees Farenheit (F)",
+         "type": ["null", "string"],
+         "default": null
+      }
+   ]
+}
