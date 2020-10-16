@@ -88,6 +88,7 @@ Setup using `interfaces\lenses.yml`
 
 
 
+
 ## Python
 ### `.py files`
 In the `./python_gh/` directory, are some of the python files I used. I used `streamer.py` for the hail mary streaming, which was meant to simulate a set of devices for a single household, streaming data corresponding to the data in the aforementioned `.csv` files. I was registering the timestamp when the data was consumed, then I would insert the data into a postgreSQL+Timescale DB table, as seen from the connection settings in the `.py` files. `config.ini` is not included, for obvious reasons.
