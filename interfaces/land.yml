@@ -1,0 +1,45 @@
+version: '2'
+services:
+  kafka-stack:
+    # This will serve as our Kafka stack
+    image: landoop/fast-data-dev:latest
+    environment:
+      - FORWARDLOGS=0
+      - RUNTESTS=0
+    ports:
+      - 3030:3030
+  connect-node-1:
+    image: landoop/fast-data-dev-connect-cluster:latest
+    depends_on:
+      - kafka-stack
+    environment:
+      - ID=1
+      - BS=10.0.0.9:9092
+      - ZK=10.0.0.9:2181
+      - SR=##.##.##.##
+  connect-node-2:
+    image: landoop/fast-data-dev-connect-cluster:latest
+    depends_on:
+      - kafka-stack
+    environment:
+      - ID=2
+      - BS=10.0.0.12:9092
+      - ZK=10.0.0.12:2181
+      - SR=##.##.##.##
+  connect-node-3:
+    image: landoop/fast-data-dev-connect-cluster:latest
+    depends_on:
+      - kafka-stack
+    environment:
+      - ID=3
+      - BS=10.0.0.10:9092
+      - ZK=10.0.0.10:2181
+      - SR=##.##.##.##
+  connect-ui:
+    image: landoop/kafka-connect-ui
+    depends_on:
+      - connect-node-1
+    environment:
+      - CONNECT_URL="##.##.##.##"
+    ports:
+      - 8000:8000

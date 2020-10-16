@@ -4,7 +4,7 @@ Data Analytics Platform with Schema Evolution ([DAPSE](https://github.com/users/
 ## Table of Contents
 1. [Data](README.md#data)
 1. [Pipeline](README.md#pipeline)
-1. [Managers](README.md#managers)
+1. [Interfaces](README.md#interfaces)
 1. [Python](README.md#python)
 1. [Database](README.md#database)
 
@@ -17,13 +17,13 @@ Readings were taken every 0.5 hour, and energy consumption is in kWh/half-hour. 
 * Low    =  3.99p/kWh
 * Normal = 11.76p/kWh
 
-![Tariff rate](./IMAGES/tou.png)
+![Tariff rate](./images/tou.png)
 
 
 The remaining customers (~4500) were on a:
 * Flat rate tariff of = 14.228 pence/kWh
 
-![Standard rate](./IMAGES/std.png)
+![Standard rate](./images/std.png)
 
 
 The `low-carbon-london-data-168-files` is about 10.7 GB (11,585,294,336 bytes) once unzipped. 168 seprate `.csv` files, each containing 1 million rows, and about ~67MB in size.
@@ -40,7 +40,7 @@ After deleting columns associated with light, volume and extra temperature readi
 
 For how the data looks and units used, see image below.
 
-![Airpi](./IMAGES/airpi.png)
+![Airpi](./images/airpi.png)
 
 
 ### 3. Actual Address Data
@@ -48,18 +48,18 @@ This data set I obtained from [Seattle GeoData](https://data-seattlecitygis.open
 
 After using real data and simulating more (based on the real energy and airquality datasets), I was able to create a Schema based dataset. The process is detailed in the image below.
 
-![Data unwrangling](./IMAGES/unwrangling.png)
+![Data unwrangling](./images/unwrangling.png)
 
 Directories `IMAGES/SCHEMA/AQ` and `IMAGES/SCHEMA/ENERGY` each contain 3600 `.csv` files. Total size is **8.90 GB (9,565,413,376 bytes)**
 
 For AQ, the file looks like:
 
-![AQ](./IMAGES/aq.png)
+![AQ](./images/aq.png)
 
 
 For ENERGY, the file looks like:
 
-![ENERGY](./IMAGES/energy.png)
+![ENERGY](./images/energy.png)
 
 
 ### 4. Other Possible Sources of Data
@@ -70,14 +70,65 @@ For ENERGY, the file looks like:
 
 ## Pipeline
 
-## Managers
+## Interfaces
+I used docker for the setup. The `.yml` are the ones I used to set up the UIs. The `land.yml` and `landdop-docker-compose.yml` were good, but it's much better to have the `lenses.yml`, which is essentially landoop+. 
+### Kafka Manager UI and Kafka Topics UI
+Setup using `interfaces\kafka-manager-docker-compose.yml` and `interfaces\kafka-topics-ui-docker-compose.yml`. 
+![Kafka-Topics](./images/tp.png)
+
+
+### Zoonavigator UI
+Setup using `interfaces\zoonavigator-docker-compose.yml`
+![Zoonavigator](./images/zn.png)
+
+
+### Lenses io UI
+Setup using `interfaces\lenses.yml`
+![ls](./images/ls.png)
+
+
 
 ## Python
-In the `./python_gh/` directory, are some of the python files I used. Streamer is the culprit behind the hail mary streaming; none_z_less, streamed the data into a postgreSQL+Timescale DB table.
+### `.py files`
+In the `./python_gh/` directory, are some of the python files I used. I used `streamer.py` for the hail mary streaming, which was meant to simulate a set of devices for a single household, streaming data corresponding to the data in the aforementioned `.csv` files. I was registering the timestamp when the data was consumed, then I would insert the data into a postgreSQL+Timescale DB table, as seen from the connection settings in the `.py` files. `config.ini` is not included, for obvious reasons.
+
+### `schema directory`
+Contains the `schema.avsc` schema for the serializing and deserializing the produced and consumed messages.
+![Avro schema](./python/schema/schema.avsc) 
+
 
 ## Database
-Essentially, PostgreSQL since I used Timescale DB.
-![DB](./IMAGES/tsdb.png)
+PostgreSQL + Timescale DB
+![database](./images/tsdb.png)
+
+Schemaless data table
+![database](./images/tsdb.png)
+
+Streaming insertion into the DB
+![database](./images/db2.png)
+
+DB schema used
+`
+"""CREATE TABLE IF NOT EXISTS sensor_data (
+        Time TIMESTAMP,
+        X NUMERIC,
+        Y NUMERIC,
+        Address TEXT,
+        City TEXT,
+        State TEXT,
+        Zip  INTEGER,
+        PM_2_5   NUMERIC,
+        O3 INTEGER,
+        NO2 NUMERIC,
+        SO2  NUMERIC,
+        CO NUMERIC,
+        Temperature NUMERIC,
+        Humidity NUMERIC,
+        Energy NUMERIC
+        );"""
+`
 
 ### Database schema used:
-![DB](./schema.avsc)
+
+
+ 

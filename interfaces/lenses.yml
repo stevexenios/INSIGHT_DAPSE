@@ -1,0 +1,38 @@
+version: '2'
+services:
+  lenses:
+    image: lensesio/lenses:4.0
+    environment:
+      LENSES_PORT: 9991
+      LENSES_KAFKA_BROKERS: "PLAINTEXT://##.##.##.##:9092,PLAINTEXT://##.##.##.##:9092, PLAINTEXT://##.##.##.##:9092"
+      LENSES_ZOOKEEPER_HOSTS: |
+        [
+          {url:"##.##.##.##:2181", jmx:"##.##.##.##:9585"},
+          {url:"##.##.##.##:2181", jmx:"##.##.##.##:9585"},
+          {url:"##.##.##.##:2181", jmx:"##.##.##.##:9585"}
+        ]
+      LENSES_SCHEMA_REGISTRY_URLS: |
+        [
+          {url:"http://localhost:8081",jmx:"localhost:9582"},
+          {url:"http://localhost:8081",jmx:"localhost:9582"}
+        ]
+      LENSES_CONNECT_CLUSTERS: |
+        [
+          {
+            name:"data_science",
+            urls: [
+              {url:"http://localhost:8083",jmx:"localhost:9584"}
+            ],
+            statuses:"connect-statuses-cluster-a",
+            configs:"connect-configs-cluster-a",
+            offsets:"connect-offsets-cluster-a"
+          }
+        ]
+      LENSES_SECURITY_USER: admin
+      LENSES_SECURITY_PASSWORD: admin
+    ports:
+      - 9991:9991
+      - 9102:9102
+    volumes:
+      - /home/ubuntu/license.json:/mnt/secrets/license.json
+    network_mode: host
