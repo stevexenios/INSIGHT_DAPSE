@@ -99,13 +99,13 @@ Contains the `schema.avsc` schema for the serializing and deserializing the prod
 
 ## Database
 PostgreSQL + Timescale DB
-![database1](./images/tsdb.png)
+![database1](images/tsdb.png)
 
 Schemaless data table
-![database2](./images/tsdb.png)
+![database2](images/tsdb.png)
 
 Streaming insertion into the DB
-![database3](./images/db2.png)
+![database3](images/db2.png)
 
 DB schema used
 `
