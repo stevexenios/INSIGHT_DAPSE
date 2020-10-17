@@ -230,20 +230,24 @@ Contains the `schema.avsc` schema for the serializing and deserializing the prod
 
 
 ## Database
-PostgreSQL + Timescale DB
+#### 1. PostgreSQL + Timescale DB
+
 ![database1](./images/tsdb.png)
 
 
-Schemaless data table
+#### 2. Schemaless data table
+
 ![database2](./images/db.png)
 
 
-Streaming insertion into the DB
+#### 3. Streaming insertion into the DB
+
 ![database3](./images/db2.png)
 
 
-DB schema used
-`
+**DB schema used**
+
+```SQL:
 """CREATE TABLE IF NOT EXISTS sensor_data (
         Time TIMESTAMP,
         X NUMERIC,
@@ -261,7 +265,7 @@ DB schema used
         Humidity NUMERIC,
         Energy NUMERIC
         );"""
-`
+```
 
 
 
