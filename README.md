@@ -155,57 +155,7 @@ Contains the `schema.avsc` schema for the serializing and deserializing the prod
          "type": ["null", "string"],
          "default": null
       },
-      {
-         "name": "CITY",
-         "type": ["null", "string"],
-         "default": null
-      },
-      {
-         "name": "STATE",
-         "type": ["null", "string"],
-         "default": null
-      },
-      {
-         "name": "ZIP",
-         "type": ["null", "string", "int"],
-         "default": null
-      },
-      {
-         "name": "PM_2_5",
-         "doc": "Units are in micrograms per cubic meter (ug/m3)",
-         "type": ["null", "string", "int", "double"],
-         "default": null
-      },
-      {
-         "name": "O3",
-         "doc": "Units are in parts per billion (ppb)",
-         "type": ["null", "string", "int", "double"],
-         "default": null
-      },
-      {
-         "name": "NO2",
-         "doc": "Units are in parts per billion (ppb)",
-         "type": ["null", "string", "int", "double"],
-         "default": null
-      },
-      {
-         "name": "SO2",
-         "doc": "Units are in parts per billion (ppb)",
-         "type": ["null", "string", "int", "double"],
-         "default": null
-      },
-      {
-         "name": "CO",
-         "doc": "Units are in parts per million (ppm)",
-         "type": ["null", "string", "int", "double"],
-         "default": null
-      },
-      {
-         "name": "TEMP",
-         "doc": "Units are in degrees Farenheit (F)",
-         "type": ["null", "string", "int", "double"],
-         "default": null
-      },
+      ...
       {
          "name": "HUMIDITY",
          "doc": "Measured as a percentage (%)",
