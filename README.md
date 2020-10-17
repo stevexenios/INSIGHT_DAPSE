@@ -29,8 +29,11 @@ The best part is that kafka comes together with a schema registry, which helps t
 ###### [![Website](https://img.shields.io/website?down_color=down&down_message=Video&label=Youtube&style=for-the-badge&up_color=crimson&up_message=Video%20up&url=https%3A%2F%2Fimg.shields.io%2Fyoutube%2Fviews%2Foa_UVFiuYuc%3Fcolor%3Dorange%26style%3Dfor-the-badge)](https://youtu.be/oa_UVFiuYuc)
 
 
+
+
 ## Requirements
 The overall requirements can be found in the `./requirements/` directory. There are 4 directories that help with different aspects of the project, indluding the setup of the kafka brokers. 
+
 
 
 
@@ -92,6 +95,7 @@ For **energy**, the file looks like:
 
 
 
+
 ## Pipeline
 Generally, **IoT Dapse's** overall architecture is:
 
@@ -99,6 +103,8 @@ Generally, **IoT Dapse's** overall architecture is:
 
 
 ![IoT-Dapse](./images/iot_dapse_2.png)
+
+
 
 
 ## Interfaces
@@ -128,6 +134,7 @@ These are other alternatives to the UI's above, and they are somewhat much easie
 ###### 3. Confluent Platform installation using ansible
 
 The only reason I was adamant to use them was because of the hourly charge for running and maintaining a cluster, together with other unforseen charges. 
+
 
 
 
@@ -185,6 +192,7 @@ Contains the `schema.avsc` schema for the serializing and deserializing the prod
 
 
 
+
 ## Database
 
 ##### 1. DB schema used
@@ -221,6 +229,7 @@ Contains the `schema.avsc` schema for the serializing and deserializing the prod
 #### 4. Streaming insertion into the DB
 
 ![database3](./images/db2.png)
+
 
 
 
