@@ -39,9 +39,11 @@ Readings were taken every 0.5 hour, and energy consumption is in kWh/half-hour. 
 * Normal = 11.76p/kWh
 ![Tariff rate](./images/tou.png)
 
+
 The remaining customers (~4500) were on a:
 * Flat rate tariff of = 14.228 pence/kWh
 ![Standard rate](./images/std.png)
+
 
 The `low-carbon-london-data-168-files` is about 10.7 GB (11,585,294,336 bytes) once unzipped. 168 seprate `.csv` files, each containing 1 million rows, and about ~67MB in size.
 
@@ -55,15 +57,18 @@ After deleting columns associated with light, volume and extra temperature readi
 For how the data looks and units used, see image below.
 ![Airpi](./images/airpi.png)
 
+
 ##### 3. Actual Address Data
 This data set I obtained from [Seattle GeoData](https://data-seattlecitygis.opendata.arcgis.com/datasets/36a74a49c2fd45f7918706b0f6e8be3e_1). I obtained a `.csv` list of 10000 actual home addresses together with their longitude and latitude.
 
 After using real data and simulating more (based on the real energy and airquality datasets), I was able to create a Schema based dataset. The process is detailed in the image below.
 ![Data unwrangling](./images/unwrangling.png)
 
+
 Directories `data/aq_sample_50_of_3600` and `data/energy_sample_50_of_3600` each contain **3600 `.csv`** files. Total size is **8.90 GB (9,565,413,376 bytes)**
 For AQ, the file looks like:
 ![AQ](./images/aq.png)
+
 
 For ENERGY, the file looks like:
 ![ENERGY](./images/energy.png)
@@ -80,6 +85,7 @@ For ENERGY, the file looks like:
 Generally, **IoT Dapse's** overall architecture is:
 ![IoT-Dapse](./images/iot_dapse_1.png)
 
+
 ![IoT-Dapse](./images/iot_dapse_2.png)
 
 
@@ -89,13 +95,16 @@ I used docker for the setup. The `.yml` are the ones I used to set up the UIs. T
 Setup using `interfaces\kafka-manager-docker-compose.yml` and `interfaces\kafka-topics-ui-docker-compose.yml`. 
 ![Kafka-Topics](./images/tp.png)
 
+
 ##### Zoonavigator UI
 Setup using `interfaces\zoonavigator-docker-compose.yml`
 ![Zoonavigator](./images/zn.png)
 
+
 ##### Lenses io UI
 Setup using `interfaces\lenses.yml`
 ![ls](./images/ls.png)
+
 
 ##### Other considerations
 These are other alternatives to the UI's above, and they are somewhat much easier to work with since they don't necessarily involve too much manual configuration of your cluster. 
@@ -121,11 +130,14 @@ Contains the `schema.avsc` schema for the serializing and deserializing the prod
 PostgreSQL + Timescale DB
 ![database1](./images/tsdb.png)
 
+
 Schemaless data table
 ![database2](./images/sc_db.png)
 
+
 Streaming insertion into the DB
 ![database3](./images/db2.png)
+
 
 DB schema used
 `
@@ -154,7 +166,7 @@ DB schema used
 Getting started with Kafka was not necessarily easy. If you happen to have trouble following through the `./setup/` directory, a source of resource is *Udemy*, *Coursera*, etc. These platforms are a treasure trove of information if you happen to have an insatiable appetite for knowing things!
 ![To_Know_Things](./images/tyrion.png)
 
+
 Additionally, there are some great youtube videos by **Stephane Maarek** and **Robin Moffatt**, both of who helped me come to have a better undertsanding of what was happening under the hood.
 
-![Caffeinated](./images/kc.png)
-*Drink Coffee && Keep Coding*
+\t\t\t ***Drink Coffee && Keep Coding***
