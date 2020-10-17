@@ -244,3 +244,8 @@ Additionally, there are some great youtube videos by **Stephane Maarek** and **R
 [![Website](https://img.shields.io/website?down_color=blue&down_message=Connect&label=Linkedin&style=for-the-badge&up_color=blue&up_message=Connect&url=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fstevegmwangi)](https://www.linkedin.com/in/stevegmwangi)
 
 ***Drink Coffee && Keep Coding***
+
+
+<p align='center'>
+  <a href="#"><img src="https://badges.pufler.dev/visits/stevexenios/INSIGHT_DAPSE"></a>
+</p>
