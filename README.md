@@ -19,13 +19,13 @@ IoT Data Analytics Platform with Schema Evolution ([DAPSE](https://github.com/us
 The best part is that kafka comes together with a schema registry, which helps to take care of one of the main engineering challenges associated with IoT devices, which is ever changing requirements that result in ever changing schema for the associated data. As such, the schema registry together with **`Avro` format** makes it easy to ensure *backward* and *forward compatibility*, since there are accomodations for these, which can be specified in a schema, say by using **`Avro's` union** type to preemptively make considerations now, for future values or fields in the underlying data. Additionally, new schema can be cached in the registry and used for new telemtry readings, among other benefits.
 
 ### Project Links
-###### ![Website](https://img.shields.io/website?down_color=blue&down_message=Slides%20down&label=IOT%20DAPSE&style=for-the-badge&up_color=red&up_message=site%20up&url=https%3A%2F%2Fwww.iotdapse.com%2F)
+###### [![Website](https://img.shields.io/website?down_color=blue&down_message=Slides%20down&label=IOT%20DAPSE&style=for-the-badge&up_color=red&up_message=site%20up&url=https%3A%2F%2Fwww.iotdapse.com%2F)](https://www.iotdapse.com/)
 
-###### ![Website](https://img.shields.io/website?down_color=down&down_message=Slides%20down&label=Medium&style=for-the-badge&up_color=white&up_message=Blog%20down&url=https%3A%2F%2Fmedium.com%2F%40stevexenios)
+###### [![Website](https://img.shields.io/website?down_color=down&down_message=Slides%20down&label=Medium&style=for-the-badge&up_color=white&up_message=Blog%20down&url=https%3A%2F%2Fmedium.com%2F%40stevexenios)](https://medium.com/@stevexenios)
 
-###### ![Website](https://img.shields.io/website?down_color=down&down_message=Slides%20down&label=Google%20slides&style=for-the-badge&up_color=blue&up_message=Slides%20up&url=https%3A%2F%2Fdocs.google.com%2Fpresentation%2Fd%2F1DfnYZrG5_nwus0gbIaDGo-k1bvJM6uLEhcONjQoE0EQ%2Fedit%3Fusp%3Dsharing)
+###### [![Website](https://img.shields.io/website?down_color=down&down_message=Slides%20down&label=Google%20slides&style=for-the-badge&up_color=green&up_message=Slides%20up&url=https%3A%2F%2Fdocs.google.com%2Fpresentation%2Fd%2F1DfnYZrG5_nwus0gbIaDGo-k1bvJM6uLEhcONjQoE0EQ%2Fedit%3Fusp%3Dsharing)](https://docs.google.com/presentation/d/1DfnYZrG5_nwus0gbIaDGo-k1bvJM6uLEhcONjQoE0EQ/edit?usp=sharing)
 
-###### ![Website](https://img.shields.io/website?down_color=down&down_message=Video&label=Youtube&style=for-the-badge&up_color=blue&up_message=Video%20up&url=https%3A%2F%2Fimg.shields.io%2Fyoutube%2Fviews%2Foa_UVFiuYuc%3Fcolor%3Dorange%26style%3Dfor-the-badge)
+###### [![Website](https://img.shields.io/website?down_color=down&down_message=Video&label=Youtube&style=for-the-badge&up_color=blue&up_message=Video%20up&url=https%3A%2F%2Fimg.shields.io%2Fyoutube%2Fviews%2Foa_UVFiuYuc%3Fcolor%3Dorange%26style%3Dfor-the-badge)](https://youtu.be/oa_UVFiuYuc)
 
 
 ## Requirements
