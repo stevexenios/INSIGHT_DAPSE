@@ -56,6 +56,7 @@ After deleting columns associated with light, volume and extra temperature readi
 * Final size = 1.21 MB (1,273,856 bytes)
 
 For how the data looks and units used, see image below.
+
 ![Airpi](./images/airpi.png)
 
 
@@ -63,15 +64,18 @@ For how the data looks and units used, see image below.
 This data set I obtained from [Seattle GeoData](https://data-seattlecitygis.opendata.arcgis.com/datasets/36a74a49c2fd45f7918706b0f6e8be3e_1). I obtained a `.csv` list of 10000 actual home addresses together with their longitude and latitude.
 
 After using real data and simulating more (based on the real energy and airquality datasets), I was able to create a Schema based dataset. The process is detailed in the image below.
+
 ![Data unwrangling](./images/unwrangling.png)
 
 
 Directories `data/aq_sample_50_of_3600` and `data/energy_sample_50_of_3600` each contain **3600 `.csv`** files. Total size is **8.90 GB (9,565,413,376 bytes)**
 For AQ, the file looks like:
+
 ![AQ](./images/aq.png)
 
 
 For ENERGY, the file looks like:
+
 ![ENERGY](./images/energy.png)
 
 
@@ -84,6 +88,7 @@ For ENERGY, the file looks like:
 
 ## Pipeline
 Generally, **IoT Dapse's** overall architecture is:
+
 ![IoT-Dapse](./images/iot_dapse_1.png)
 
 
@@ -92,18 +97,21 @@ Generally, **IoT Dapse's** overall architecture is:
 
 ## Interfaces
 I used docker for the setup. The `.yml` are the ones I used to set up the UIs. The `land.yml` and `landdop-docker-compose.yml` were good, but it's much better to have the `lenses.yml`, which is essentially landoop+.
-##### Kafka Manager UI and Kafka Topics UI
+#### Kafka Manager UI and Kafka Topics UI
 Setup using `interfaces\kafka-manager-docker-compose.yml` and `interfaces\kafka-topics-ui-docker-compose.yml`. 
+
 ![Kafka-Topics](./images/tp.png)
 
 
-##### Zoonavigator UI
+#### Zoonavigator UI
 Setup using `interfaces\zoonavigator-docker-compose.yml`
+
 ![Zoonavigator](./images/zn.png)
 
 
-##### Lenses io UI
+#### Lenses io UI
 Setup using `interfaces\lenses.yml`
+
 ![ls](./images/ls.png)
 
 
@@ -123,7 +131,7 @@ In the `./python_gh/` directory, are some of the python files I used. I used `st
 
 ##### `schema directory`
 Contains the `schema.avsc` schema for the serializing and deserializing the produced and consumed messages.
-```avro:
+```JSON:
 
 {
    "type": "record",
@@ -141,9 +149,83 @@ Contains the `schema.avsc` schema for the serializing and deserializing the prod
          "type": ["null", "string", "double"],
          "default": null
       },
+      {
+         "name": "ADDRESS",
+         "type": ["null", "string"],
+         "default": null
+      },
+      {
+         "name": "CITY",
+         "type": ["null", "string"],
+         "default": null
+      },
+      {
+         "name": "STATE",
+         "type": ["null", "string"],
+         "default": null
+      },
+      {
+         "name": "ZIP",
+         "type": ["null", "string", "int"],
+         "default": null
+      },
+      {
+         "name": "PM_2_5",
+         "doc": "Units are in micrograms per cubic meter (ug/m3)",
+         "type": ["null", "string", "int", "double"],
+         "default": null
+      },
+      {
+         "name": "O3",
+         "doc": "Units are in parts per billion (ppb)",
+         "type": ["null", "string", "int", "double"],
+         "default": null
+      },
+      {
+         "name": "NO2",
+         "doc": "Units are in parts per billion (ppb)",
+         "type": ["null", "string", "int", "double"],
+         "default": null
+      },
+      {
+         "name": "SO2",
+         "doc": "Units are in parts per billion (ppb)",
+         "type": ["null", "string", "int", "double"],
+         "default": null
+      },
+      {
+         "name": "CO",
+         "doc": "Units are in parts per million (ppm)",
+         "type": ["null", "string", "int", "double"],
+         "default": null
+      },
+      {
+         "name": "TEMP",
+         "doc": "Units are in degrees Farenheit (F)",
+         "type": ["null", "string", "int", "double"],
+         "default": null
+      },
+      {
+         "name": "HUMIDITY",
+         "doc": "Measured as a percentage (%)",
+         "type": ["null", "string", "int", "double"],
+         "default": null
+      },
+      {
+         "name": "ENERGY_CONSUMED",
+         "doc": "Values are in Kilowatts consumed per hour(kWh/h)",
+         "type": ["null", "string", "int", "double"],
+         "default": null
+      },
+      {
+         "name": "TARRIFF",
+         "doc": "Units are in degrees Farenheit (F)",
+         "type": ["null", "string"],
+         "default": null
+      }
+   ]
+}
 ```
-
-![Avro schema](./python/schema/schema.avsc) 
 
 
 
