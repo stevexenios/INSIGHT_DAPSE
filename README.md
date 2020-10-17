@@ -1,12 +1,36 @@
-# INSIGHT_DAPSE
-Data Analytics Platform with Schema Evolution ([DAPSE](https://github.com/users/stevexenios/projects/6))
-
+# IoT_DAPSE
 ## Table of Contents
+1. [Introduction](README.md#introduction)
 1. [Data](README.md#data)
 1. [Pipeline](README.md#pipeline)
 1. [Interfaces](README.md#interfaces)
 1. [Python](README.md#python)
 1. [Database](README.md#database)
+
+
+## Introduction
+IoT Data Analytics Platform with Schema Evolution ([DAPSE](https://github.com/users/stevexenios/projects/6)) is a platform geared to streaming data from **IoT devices** to analysts' dashboard(s) on Grafana. The streaming data is stored in a PostgreSQL database, from which the most recent data can be streamed onto any dashboard connected to the database, facilitating data visualization. The project main focus is on smart home devices (hence IoT), which are simulated to generate telemetry readings that are streamed via a set of kafka brokers into the database. 
+
+The best part is that kafka comes together with a schema registry, which helps to take care of one of the main engineering challenges associated with IoT devices, which is ever changing requirements that result in ever changing schema for the associated data. As such, the schema registry together with **`Avro` format** makes it easy to ensure *backward* and *forward compatibility*, since there are accomodations for these, which can be specified in a schema, say by using **`Avro's` union** type to preemptively make considerations now, for future values or fields in the underlying data. Additionally, new schema can be cached in the registry and used for new telemtry readings, among other benefits.
+
+### 1. [IoT Dapse site](https://www.iotdapse.com/)
+
+### 2. [Youtube](https://youtu.be/oa_UVFiuYuc)
+![Video1](https://img.youtube.com/vi/oa_UVFiuYuc/0.jpg)
+
+### 3. Medium
+
+### 4. [Slides](https://docs.google.com/presentation/d/1DfnYZrG5_nwus0gbIaDGo-k1bvJM6uLEhcONjQoE0EQ/edit?usp=sharing)
+
+
+
+
+
+In sum, **IoT Dapse's** overall architecture is:
+![IoT-Dapse](./images/iot_dapse.png)
+
+
+
 
 ## Data
 ### 1. Utility Data
@@ -71,22 +95,26 @@ For ENERGY, the file looks like:
 ## Pipeline
 
 ## Interfaces
-I used docker for the setup. The `.yml` are the ones I used to set up the UIs. The `land.yml` and `landdop-docker-compose.yml` were good, but it's much better to have the `lenses.yml`, which is essentially landoop+. 
+I used docker for the setup. The `.yml` are the ones I used to set up the UIs. The `land.yml` and `landdop-docker-compose.yml` were good, but it's much better to have the `lenses.yml`, which is essentially landoop+.
 ### Kafka Manager UI and Kafka Topics UI
 Setup using `interfaces\kafka-manager-docker-compose.yml` and `interfaces\kafka-topics-ui-docker-compose.yml`. 
 ![Kafka-Topics](./images/tp.png)
-
 
 ### Zoonavigator UI
 Setup using `interfaces\zoonavigator-docker-compose.yml`
 ![Zoonavigator](./images/zn.png)
 
-
 ### Lenses io UI
 Setup using `interfaces\lenses.yml`
 ![ls](./images/ls.png)
 
+### Other considerations
+These are other alternatives to the UI's above, and they are somewhat much easier to work with since they don't necessarily involve too much manual configuration of your cluster. 
+#### 1. Confluent Cloud
+#### 2. Amazon MSK
+#### 3. Confluent Platform installation using ansible
 
+The only reason I was adamant to use them was because of the hourly charge for running and maintaining a cluster, together with other unforseen charges. 
 
 
 ## Python
@@ -103,7 +131,7 @@ PostgreSQL + Timescale DB
 ![database1](./images/tsdb.png)
 
 Schemaless data table
-![database2](./images/tsdb.png)
+![database2](./images/sc_db.png)
 
 Streaming insertion into the DB
 ![database3](./images/db2.png)
