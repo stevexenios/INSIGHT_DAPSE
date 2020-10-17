@@ -1,7 +1,6 @@
 # IoT_DAPSE
-<img src "https://img.shields.io/badge/linkedin-%stevegmwangi.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />
 
-[Repo size](https://img.shields.io/github/repo-size/stevexenios/INSIGHT_DAPSE)
+https://img.shields.io/github/repo-size/stevexenios/INSIGHT_DAPSE?color=red&logo=iot_dapse
 
 ## Table of Contents
 1. [Introduction](README.md#introduction)
