@@ -19,11 +19,11 @@ IoT Data Analytics Platform with Schema Evolution ([DAPSE](https://github.com/us
 The best part is that kafka comes together with a schema registry, which helps to take care of one of the main engineering challenges associated with IoT devices, which is ever changing requirements that result in ever changing schema for the associated data. As such, the schema registry together with **`Avro` format** makes it easy to ensure *backward* and *forward compatibility*, since there are accomodations for these, which can be specified in a schema, say by using **`Avro's` union** type to preemptively make considerations now, for future values or fields in the underlying data. Additionally, new schema can be cached in the registry and used for new telemtry readings, among other benefits.
 
 ### Project Links
-###### 1. [IoT Dapse site](https://www.iotdapse.com/)
+###### 1. [IoT Dapse site](https://www.iotdapse.com/) ![Website](https://img.shields.io/website?down_color=yellow&down_message=dapse_down&logo=iot_dapse&style=for-the-badge&up_color=blue&up_message=dapse_up&url=https%3A%2F%2Fwww.iotdapse.com%2F)
 ###### 2. [Medium](https://www.medium.com)
-###### 3. [Slides](https://docs.google.com/presentation/d/1DfnYZrG5_nwus0gbIaDGo-k1bvJM6uLEhcONjQoE0EQ/edit?usp=sharing)
+###### 3. [Slides](https://docs.google.com/presentation/d/1DfnYZrG5_nwus0gbIaDGo-k1bvJM6uLEhcONjQoE0EQ/edit?usp=sharing) https://img.shields.io/website?down_color=blue&down_message=slides-down&logo=iot_dapse&style=for-the-badge&up_color=green&up_message=slides-up&url=https%3A%2F%2Fdocs.google.com%2Fpresentation%2Fd%2F1DfnYZrG5_nwus0gbIaDGo-k1bvJM6uLEhcONjQoE0EQ%2Fedit%3Fusp%3Dsharing
 ###### 4. [Youtube](https://youtu.be/oa_UVFiuYuc)
-![Video1](https://img.youtube.com/vi/oa_UVFiuYuc/0.jpg)
+![Video1](https://img.youtube.com/vi/oa_UVFiuYuc/0.jpg) https://img.shields.io/youtube/views/oa_UVFiuYuc?color=orange&style=for-the-badge
 
 
 
