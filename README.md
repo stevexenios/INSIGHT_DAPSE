@@ -37,6 +37,7 @@ Readings were taken every 0.5 hour, and energy consumption is in kWh/half-hour. 
 * High   = 67.20p/kWh
 * Low    =  3.99p/kWh
 * Normal = 11.76p/kWh
+
 ![Tariff rate](./images/tou.png)
 
 
@@ -122,6 +123,27 @@ In the `./python_gh/` directory, are some of the python files I used. I used `st
 
 ##### `schema directory`
 Contains the `schema.avsc` schema for the serializing and deserializing the produced and consumed messages.
+```
+{.avro}
+
+{
+   "type": "record",
+   "namespace": "both.avro",
+   "name": "both",
+   "doc": "Both air q and e",
+   "fields": [
+      {
+         "name": "X",
+         "type": ["null", "string", "double"],
+         "default": null
+      },
+      {
+         "name": "Y",
+         "type": ["null", "string", "double"],
+         "default": null
+      },
+```
+
 ![Avro schema](./python/schema/schema.avsc) 
 
 
@@ -164,9 +186,10 @@ DB schema used
 
 ## Suggestions
 Getting started with Kafka was not necessarily easy. If you happen to have trouble following through the `./setup/` directory, a source of resource is *Udemy*, *Coursera*, etc. These platforms are a treasure trove of information if you happen to have an insatiable appetite for knowing things!
+
 ![To_Know_Things](./images/tyrion.png)
 
 
 Additionally, there are some great youtube videos by **Stephane Maarek** and **Robin Moffatt**, both of who helped me come to have a better undertsanding of what was happening under the hood.
 
-\t\t\t ***Drink Coffee && Keep Coding***
+***Drink Coffee && Keep Coding***
