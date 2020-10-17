@@ -26,7 +26,7 @@ The best part is that kafka comes together with a schema registry, which helps t
 
 ###### [![Website](https://img.shields.io/website?down_color=down&down_message=Slides%20down&label=Google%20slides&style=for-the-badge&up_color=green&up_message=Slides%20up&url=https%3A%2F%2Fdocs.google.com%2Fpresentation%2Fd%2F1DfnYZrG5_nwus0gbIaDGo-k1bvJM6uLEhcONjQoE0EQ%2Fedit%3Fusp%3Dsharing)](https://docs.google.com/presentation/d/1DfnYZrG5_nwus0gbIaDGo-k1bvJM6uLEhcONjQoE0EQ/edit?usp=sharing)
 
-###### [![Website](https://img.shields.io/website?down_color=down&down_message=Video&label=Youtube&style=for-the-badge&up_color=red&up_message=Video%20up&url=https%3A%2F%2Fimg.shields.io%2Fyoutube%2Fviews%2Foa_UVFiuYuc%3Fcolor%3Dorange%26style%3Dfor-the-badge)](https://youtu.be/oa_UVFiuYuc)
+###### [![Website](https://img.shields.io/website?down_color=down&down_message=Video&label=Youtube&style=for-the-badge&up_color=crimson&up_message=Video%20up&url=https%3A%2F%2Fimg.shields.io%2Fyoutube%2Fviews%2Foa_UVFiuYuc%3Fcolor%3Dorange%26style%3Dfor-the-badge)](https://youtu.be/oa_UVFiuYuc)
 
 
 ## Requirements
