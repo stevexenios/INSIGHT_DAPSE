@@ -123,8 +123,7 @@ In the `./python_gh/` directory, are some of the python files I used. I used `st
 
 ##### `schema directory`
 Contains the `schema.avsc` schema for the serializing and deserializing the produced and consumed messages.
-```
-{.avsc}
+```avsc
 
 {
    "type": "record",
