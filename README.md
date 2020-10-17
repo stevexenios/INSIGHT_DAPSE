@@ -27,7 +27,7 @@ The best part is that kafka comes together with a schema registry, which helps t
 
 ###### ![Website](https://img.shields.io/website?down_color=down&down_message=Video&label=Youtube&style=for-the-badge&up_color=blue&up_message=Video%20up&url=https%3A%2F%2Fimg.shields.io%2Fyoutube%2Fviews%2Foa_UVFiuYuc%3Fcolor%3Dorange%26style%3Dfor-the-badge)
 
-
+<img alt="Website" src="https://img.shields.io/website?down_color=blue&down_message=Connect&label=Linkedin&style=for-the-badge&up_color=blue&up_message=Connect&url=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fstevegmwangi">
 
 ## Requirements
 The overall requirements can be found in the `./requirements/` directory. There are 4 directories that help with different aspects of the project, indluding the setup of the kafka brokers. 
