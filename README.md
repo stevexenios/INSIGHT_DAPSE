@@ -1,6 +1,6 @@
 # IoT_DAPSE
 
-https://img.shields.io/github/repo-size/stevexenios/INSIGHT_DAPSE?color=red&logo=iot_dapse
+![GitHub repo size](https://img.shields.io/github/repo-size/stevexenios/INSIGHT_DAPSE?color=red&logo=iot_dapse)
 
 ## Table of Contents
 1. [Introduction](README.md#introduction)
