@@ -43,6 +43,7 @@ Readings were taken every 0.5 hour, and energy consumption is in kWh/half-hour. 
 
 The remaining customers (~4500) were on a:
 * Flat rate tariff of = 14.228 pence/kWh
+
 ![Standard rate](./images/std.png)
 
 
