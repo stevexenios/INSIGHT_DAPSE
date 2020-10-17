@@ -1,5 +1,5 @@
 # IoT_DAPSE
-[Linkedin](www.linkedin.com/in/stevegmwangi)<img src https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white />
+[Linkedin](www.linkedin.com/in/stevegmwangi)<img src "https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />
 
 [Repo size](https://img.shields.io/github/repo-size/stevexenios/INSIGHT_DAPSE)
 
