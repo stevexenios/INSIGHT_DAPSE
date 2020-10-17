@@ -235,7 +235,7 @@ PostgreSQL + Timescale DB
 
 
 Schemaless data table
-![database2](./images/sc_db.png)
+![database2](./images/db.png)
 
 
 Streaming insertion into the DB
