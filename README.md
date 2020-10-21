@@ -1,7 +1,7 @@
 # IoT_DAPSE
-<img src "https://img.shields.io/badge/linkedin-%stevegmwangi.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />
 
-[Repo size](https://img.shields.io/github/repo-size/stevexenios/INSIGHT_DAPSE)
+![GitHub last commit](https://img.shields.io/github/last-commit/stevexenios/INSIGHT_DAPSE?color=blue&style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/stevexenios/INSIGHT_DAPSE?style=for-the-badge)
 
 ## Table of Contents
 1. [Introduction](README.md#introduction)
@@ -20,16 +20,20 @@ IoT Data Analytics Platform with Schema Evolution ([DAPSE](https://github.com/us
 The best part is that kafka comes together with a schema registry, which helps to take care of one of the main engineering challenges associated with IoT devices, which is ever changing requirements that result in ever changing schema for the associated data. As such, the schema registry together with **`Avro` format** makes it easy to ensure *backward* and *forward compatibility*, since there are accomodations for these, which can be specified in a schema, say by using **`Avro's` union** type to preemptively make considerations now, for future values or fields in the underlying data. Additionally, new schema can be cached in the registry and used for new telemtry readings, among other benefits.
 
 ### Project Links
-###### 1. [IoT Dapse site](https://www.iotdapse.com/)
-###### 2. [Medium](https://www.medium.com)
-###### 3. [Slides](https://docs.google.com/presentation/d/1DfnYZrG5_nwus0gbIaDGo-k1bvJM6uLEhcONjQoE0EQ/edit?usp=sharing)
-###### 4. [Youtube](https://youtu.be/oa_UVFiuYuc)
-![Video1](https://img.youtube.com/vi/oa_UVFiuYuc/0.jpg)
+###### [![Website](https://img.shields.io/website?down_color=blue&down_message=Slides%20down&label=IOT%20DAPSE&style=for-the-badge&up_color=red&up_message=site%20up&url=https%3A%2F%2Fwww.iotdapse.com%2F)](https://www.iotdapse.com/)
+
+###### [![Website](https://img.shields.io/website?down_color=down&down_message=Slides%20down&label=Medium&style=for-the-badge&up_color=white&up_message=Blog%20down&url=https%3A%2F%2Fmedium.com%2F%40stevexenios)](https://medium.com/@stevexenios)
+
+###### [![Website](https://img.shields.io/website?down_color=down&down_message=Slides%20down&label=Google%20slides&style=for-the-badge&up_color=green&up_message=Slides%20up&url=https%3A%2F%2Fdocs.google.com%2Fpresentation%2Fd%2F1DfnYZrG5_nwus0gbIaDGo-k1bvJM6uLEhcONjQoE0EQ%2Fedit%3Fusp%3Dsharing)](https://docs.google.com/presentation/d/1DfnYZrG5_nwus0gbIaDGo-k1bvJM6uLEhcONjQoE0EQ/edit?usp=sharing)
+
+###### [![Website](https://img.shields.io/website?down_color=down&down_message=Video&label=Youtube&style=for-the-badge&up_color=crimson&up_message=Video%20up&url=https%3A%2F%2Fimg.shields.io%2Fyoutube%2Fviews%2Foa_UVFiuYuc%3Fcolor%3Dorange%26style%3Dfor-the-badge)](https://youtu.be/oa_UVFiuYuc)
+
 
 
 
 ## Setup
 The overall requirements can be found in the `./setup/` directory. There are 4 directories that help with different aspects of the project, indluding the setup of the kafka brokers. 
+
 
 
 
@@ -91,6 +95,7 @@ For **energy**, the file looks like:
 
 
 
+
 ## Pipeline
 Generally, **IoT Dapse's** overall architecture is:
 
@@ -98,6 +103,8 @@ Generally, **IoT Dapse's** overall architecture is:
 
 
 ![IoT-Dapse](./images/iot_dapse_2.png)
+
+
 
 
 ## Interfaces
@@ -127,6 +134,7 @@ These are other alternatives to the UI's above, and they are somewhat much easie
 ###### 3. Confluent Platform installation using ansible
 
 The only reason I was adamant to use them was because of the hourly charge for running and maintaining a cluster, together with other unforseen charges. 
+
 
 
 
@@ -184,6 +192,7 @@ Contains the `schema.avsc` schema for the serializing and deserializing the prod
 
 
 
+
 ## Database
 
 ##### 1. DB schema used
@@ -223,6 +232,7 @@ Contains the `schema.avsc` schema for the serializing and deserializing the prod
 
 
 
+
 ## Suggestions
 Getting started with Kafka was not necessarily easy. If you happen to have trouble following through the `./setup/` directory, a source of resource is *Udemy*, *Coursera*, etc. These platforms are a treasure trove of information if you happen to have an insatiable appetite for knowing things!
 
@@ -231,4 +241,11 @@ Getting started with Kafka was not necessarily easy. If you happen to have troub
 
 Additionally, there are some great youtube videos by **Stephane Maarek** and **Robin Moffatt**, both of who helped me come to have a better undertsanding of what was happening under the hood.
 
+[![Website](https://img.shields.io/website?down_color=blue&down_message=Connect&label=Linkedin&style=for-the-badge&up_color=blue&up_message=Connect&url=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fstevegmwangi)](https://www.linkedin.com/in/stevegmwangi)
+
 ***Drink Coffee && Keep Coding***
+
+
+<p align='center'>
+  <a href="#"><img src="https://badges.pufler.dev/visits/stevexenios/INSIGHT_DAPSE"></a>
+</p>
