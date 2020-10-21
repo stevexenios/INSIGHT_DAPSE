@@ -31,13 +31,13 @@ def write_avro_files():
         # One key for house 1
         w1.append(generate_house_1())
         # Two keys for house 2 and 4
-        # d2_4 = generate_house_2_and_4()
-        # w2.append(d2_4['h2'])
-        # w4.append(d2_4['h4'])
-        # # Two keys for house 3 and 5 
-        # d3_5 = generate_house_3_and_5()
-        # w3.append(d3_5['h3'])
-        # w5.append(d3_5['h5'])
+        d2_4 = generate_house_2_and_4()
+        w2.append(d2_4['h2'])
+        w4.append(d2_4['h4'])
+        # Two keys for house 3 and 5 
+        d3_5 = generate_house_3_and_5()
+        w3.append(d3_5['h3'])
+        w5.append(d3_5['h5'])
 
     w1.close()
     w2.close()

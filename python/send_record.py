@@ -4,6 +4,7 @@
 import json
 import uuid
 
+from confluent_kafka.avro.cached_schema_registry_client import CachedSchemaRegistryClient
 from confluent_kafka.avro import AvroProducer
 from configparser import ConfigParser
 from utils.load_avro import load_avro_schema
@@ -13,15 +14,22 @@ from utils.house_1 import generate_house_1
 from utils.house_4 import generate_house_2_and_4
 from utils.house_5 import generate_house_3_and_5
 
+# Get schema from stored in registry
+sr = CachedSchemaRegistryClient({"url": "http://localhost:8081"})
+value_schema = sr.get_latest_schema("orders-value")[1]
+key_schema= sr.get_latest_schema("orders-key")[1]
+
+# Get configuration file
 file = './secret/config.ini'
 config = ConfigParser()
 config.read(file)
 
+# Get configuration values
 kafka_hosts = config['account']['KAFKA_HOSTS']
 kafka_settings = {'bootstrap.servers': 'kafka1, kafka2, kafka3','group.id': 'mygroup','client.id': 'client-1','enable.auto.commit': True,'session.timeout.ms': 6000,'default.topic.config': {'auto.offset.reset': 'smallest'}}
 kafka_topic = config['account']['TOPIC']
 
-
+# produce records
 def send_record():
     producer_config = {
         "bootstrap.servers": kafka_hosts,
@@ -42,9 +50,7 @@ def send_record():
         # Get json objects from dictionary of telemetry data
         vals = [json.dumps(h1), json.dumps(d2_4['h2']), json.dumps(d3_5['h3']), json.dumps(d2_4['h4']), json.dumps(d3_5['h5'])]
         for i in range(5):
-            # Get schema from stored schema's
-            file = './schema/h' + str(i+1) + '.avsc'
-            key_schema, value_schema = load_avro_schema(file)
+            
             producer = AvroProducer(producer_config, default_key_schema=key_schema, default_value_schema=value_schema)
             value = vals[i]
             try:
