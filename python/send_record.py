@@ -1,6 +1,10 @@
-
 #!/usr/bin/env python
+'''
+Author Steve G. Mwangi
+Project: Dapse
 
+Avro producer with cached schema data
+'''
 import json
 import uuid
 
@@ -14,11 +18,6 @@ from utils.house_1 import generate_house_1
 from utils.house_4 import generate_house_2_and_4
 from utils.house_5 import generate_house_3_and_5
 
-# Get schema from stored in registry
-sr = CachedSchemaRegistryClient({"url": "http://localhost:8081"})
-value_schema = sr.get_latest_schema("orders-value")[1]
-key_schema= sr.get_latest_schema("orders-key")[1]
-
 # Get configuration file
 file = './secret/config.ini'
 config = ConfigParser()
@@ -31,12 +30,20 @@ kafka_topic = config['account']['TOPIC']
 
 # produce records
 def send_record():
+
+    # Configuring the producer
     producer_config = {
         "bootstrap.servers": kafka_hosts,
         "schema.registry.url": 'http://localhost:8081'
     }
 
+    # Generating UUID for key
     key = str(uuid.uuid4())
+
+    # Get schema from stored in registry
+    schema_registry = CachedSchemaRegistryClient({"url": "http://localhost:8081"})
+    value_schema = schema_registry.get_latest_schema("orders-value")[1]
+    key_schema= schema_registry.get_latest_schema("orders-key")[1]
     
     while True:
         # Functions returning dictionary of telemetry data
