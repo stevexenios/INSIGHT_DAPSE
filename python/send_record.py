@@ -44,6 +44,9 @@ def send_record():
     schema_registry = CachedSchemaRegistryClient({"url": "http://localhost:8081"})
     value_schema = schema_registry.get_latest_schema("orders-value")[1]
     key_schema= schema_registry.get_latest_schema("orders-key")[1]
+    print("SR: ", schema_registry)
+    print("VS: ", value_schema)
+    print("KS: ", key_schema)
     
     while True:
         # Functions returning dictionary of telemetry data
