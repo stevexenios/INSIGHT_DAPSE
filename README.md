@@ -5,7 +5,7 @@
 
 ## Table of Contents
 1. [Introduction](README.md#introduction)
-1. [Requirements](README.md#requirements)
+1. [setup](README.md#setup)
 1. [Data](README.md#data)
 1. [Pipeline](README.md#pipeline)
 1. [Interfaces](README.md#interfaces)
@@ -28,8 +28,8 @@ The best part is that kafka comes together with a schema registry, which helps t
 
 
 
-## Requirements
-The overall requirements can be found in the `./requirements/` directory. There are 4 directories that help with different aspects of the project, indluding the setup of the kafka brokers. 
+## Setup
+The overall requirements can be found in the `./setup/` directory. There are 4 directories that help with different aspects of the project, indluding the setup of the kafka brokers. 
 
 
 

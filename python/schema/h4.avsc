@@ -1,0 +1,42 @@
+{
+   "type": "record",
+   "namespace": "schema",
+   "name": "h4",
+   "doc": "test1 [1:x, 2:y, 3:temperature(f), 4:CO (ppm), 5:energy, 6:tariff",
+   "fields": [
+      {
+         "name": "Tarriff",
+         "doc": "Values could be high, low or normal",
+         "type": ["null", "string"],
+         "default": null
+      },
+      {
+         "name": "Energy",
+         "doc": "Values are in Kilowatts consumed per hour(kWh/h)",
+         "type": ["null", "string", "int", "double"],
+         "default": null
+      },
+      {
+         "name": "Temperature",
+         "doc": "Units are in degrees Farenheit (F)",
+         "type": ["null", "string", "int", "double"],
+         "default": null
+      },
+      {
+         "name": "CO",
+         "doc": "Units are in parts per million (ppm)",
+         "type": ["null", "string", "int", "double"],
+         "default": null
+      },
+      {
+         "name": "Y",
+         "type": ["null", "string", "double"],
+         "default": null
+      },
+      {
+         "name": "X",
+         "type": ["null", "string", "double"],
+         "default": null
+      }
+   ]
+}

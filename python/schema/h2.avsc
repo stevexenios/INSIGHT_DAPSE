@@ -1,0 +1,92 @@
+{
+   "type": "record",
+   "namespace": "schema",
+   "name": "h2",
+   "doc": "control2",
+   "fields": [
+      {
+         "name": "Tarriff",
+         "doc": "Values could be high, low or normal",
+         "type": ["null", "string"],
+         "default": null
+      },
+      {
+         "name": "Energy",
+         "doc": "Values are in Kilowatts consumed per hour(kWh/h)",
+         "type": ["null", "string", "int", "double"],
+         "default": null
+      },
+      {
+         "name": "Humidity",
+         "doc": "Measured as a percentage (%)",
+         "type": ["null", "string", "int", "double"],
+         "default": null
+      },
+      {
+         "name": "Temperature",
+         "doc": "Units are in degrees Farenheit (F)",
+         "type": ["null", "string", "int", "double"],
+         "default": null
+      },
+      {
+         "name": "CO",
+         "doc": "Units are in parts per million (ppm)",
+         "type": ["null", "string", "int", "double"],
+         "default": null
+      },
+      {
+         "name": "SO2",
+         "doc": "Units are in parts per billion (ppb)",
+         "type": ["null", "string", "int", "double"],
+         "default": null
+      },
+      {
+         "name": "NO2",
+         "doc": "Units are in parts per billion (ppb)",
+         "type": ["null", "string", "int", "double"],
+         "default": null
+      },
+      {
+         "name": "O3",
+         "doc": "Units are in parts per billion (ppb)",
+         "type": ["null", "string", "int", "double"],
+         "default": null
+      },
+      {
+         "name": "PM_2_5",
+         "doc": "Units are in micrograms per cubic meter (ug/m3)",
+         "type": ["null", "string", "int", "double"],
+         "default": null
+      },
+      {
+         "name": "Zip",
+         "type": ["null", "string", "int"],
+         "default": null
+      },
+      {
+         "name": "State",
+         "type": ["null", "string"],
+         "default": null
+      },
+      {
+         "name": "City",
+         "type": ["null", "string"],
+         "default": null
+      },
+      {
+         "name": "Address",
+         "type": ["null", "string"],
+         "default": null
+      },
+      {
+         "name": "Y",
+         "type": ["null", "string", "double"],
+         "default": null
+      },
+      {
+         "name": "X",
+         "type": ["null", "string", "double"],
+         "default": null
+      }
+   ]
+}

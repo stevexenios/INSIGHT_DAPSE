@@ -1,0 +1,32 @@
+{
+   "type": "record",
+   "namespace": "schema",
+   "name": "h5",
+   "doc": "test2 [1:address, 2:temperature(c), 3:co (ppm), 6:energy]",
+   "fields": [
+      {
+         "name": "Energy",
+         "doc": "Values are in Kilowatts consumed per hour(kWh/h)",
+         "type": ["null", "string", "int", "double"],
+         "default": null
+      },
+      {
+         "name": "CO",
+         "doc": "Units are in parts per million (ppm)",
+         "type": ["null", "string", "int", "double"],
+         "default": null
+      },
+      {
+         "name": "Temperature",
+         "doc": "Units are in degrees Celsius (C)",
+         "type": ["null", "string", "int", "double"],
+         "default": null
+      },
+      {
+         "name": "Address",
+         "doc": "Includes Street, City, State and Zip",
+         "type": ["null", "string"],
+         "default": null
+      }
+   ]
+}
