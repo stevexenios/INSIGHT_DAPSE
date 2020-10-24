@@ -6,10 +6,11 @@ Description: This code is for generating random telemetry data and streaming tha
 to a PostgreSQL+Timescale DB, then visualizing the data on a grafana dashboard hosted at:
 www.iotdapse.com
 '''
-import threading, sys, io, os, random, datetime, boto3, time, botocore, json, uuid, psycopg2, ast, concurrent.futures
+import threading, sys, io, os, random, datetime, time, json, uuid, psycopg2, ast, concurrent.futures
 from configparser import ConfigParser
 from confluent_kafka import Producer, Consumer, KafkaError
 from time import sleep
+from datetime import datetime, timedelta
 
 file = 'config.ini'
 config = ConfigParser()
@@ -118,14 +119,17 @@ def start_producing():
     global seed
     global p_producer
     global kafka_topic
-    try:
-        # print(i, "Producing seed: ", seed)
-        p_producer.produce(kafka_topic, '{0}'.format(seed), callback=acked)
-        mutator()
-        p_producer.poll(0.5)
-    except KeyboardInterrupt:
-        pass
-    p_producer.flush(1)
+    while True:
+        try:
+            # print(i, "Producing seed: ", seed)
+            p_producer.produce(kafka_topic, '{0}'.format(seed), callback=acked)
+            with concurrent.futures.ThreadPoolExecutor() as executor:
+                    executor.submit(mutator)
+                    print("Mutated data")
+            p_producer.poll(0.1)
+        except KeyboardInterrupt:
+            pass
+    p_producer.flush()
     
 
 # Function to create DB Table for PostgreSQL
@@ -175,24 +179,27 @@ def insert_into_db(dictionary_y):
 def start_consuming():
     global kafka_topic
     global c_consumer
-    try:
-        msg = c_consumer.poll(0.1)
-        if not msg.error():
-            d1 = msg.value()
-            val = d1.decode("UTF-8")
-            d = ast.literal_eval(val)
-            d['Time'] = str(datetime.now())
-            with concurrent.futures.ThreadPoolExecutor() as executor:
-                f1 = executor.submit(mutator)
-                f2 = executor.submit(insert_into_db, d)
-                print(f1.result())
-                print(f2.result())
-        elif msg.error().code() == KafkaError._PARTITION_EOF:
-            print('End of partition reached {0}/{1}'.format(msg.topic(), msg.partition()))
-        else:
-            print('Error occured: {0}'.format(msg.error().str()))
-    except KeyboardInterrupt:
-        pass
+    
+    while True:
+        try:    
+            msg = c_consumer.poll(0.2)
+            print(msg)
+            if not msg.error():
+                d1 = msg.value()
+                val = d1.decode("UTF-8")
+                d = ast.literal_eval(val)
+                d['Time'] = str(datetime.now()+timedelta(seconds=1))
+                with concurrent.futures.ThreadPoolExecutor() as executor:
+                    executor.submit(print, "consumed message = ", str(d))
+                    executor.submit(insert_into_db, d)
+                    print("Inserted into db")
+            elif msg.error().code() == KafkaError._PARTITION_EOF:
+                print('End of partition reached {0}/{1}'.format(msg.topic(), msg.partition()))
+            else:
+                print('Error occured: {0}'.format(msg.error().str()))
+        except KeyboardInterrupt:
+            pass
+    c_consumer.close()
         
         
 
@@ -200,11 +207,11 @@ def start_consuming():
 if __name__=="__main__":
     # create_table(conn)
     start_time = time.time()
-    for _ in range(100000000):
-        start_producing()
-        start_consuming()
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        executor.submit(start_producing)
+        executor.submit(start_consuming)
     end_time = time.perf_counter()
-    c_consumer.close()
+    
     print(f"Finished in: {round((end_time-start_time))} seconds")
     
 
